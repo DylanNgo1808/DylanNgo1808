@@ -3,6 +3,7 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 const GITHUB_COLORS = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"];
 const GITLAB_COLORS = ["#161b22", "#4b1f11", "#8c2d04", "#d14a08", "#fc6d26"];
 const BOTH_COLORS = ["#161b22", "#5f4709", "#9b760f", "#d29922", "#f6c945"];
+const FONT_FAMILY = "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 
 const GITLAB_SINGLE_ACTIVITY_ACTIONS = new Set([
   "opened",
@@ -78,11 +79,11 @@ function colorFor(githubCount, gitlabCount) {
 export function buildContributionSvg({ start, end, github = {}, gitlab = {} }) {
   const days = calendarDays(start, end);
   const square = 12;
-  const gap = 4;
-  const left = 28;
-  const top = 56;
-  const width = Math.max(840, left + Math.ceil(days.length / 7) * (square + gap) + 28);
-  const height = 205;
+  const gap = 5;
+  const left = 58;
+  const top = 88;
+  const width = Math.max(920, left + Math.ceil(days.length / 7) * (square + gap) + 30);
+  const height = 246;
   const monthLabels = [];
   const cells = [];
   let previousMonth = "";
@@ -95,7 +96,7 @@ export function buildContributionSvg({ start, end, github = {}, gitlab = {} }) {
     const y = top + weekday * (square + gap);
     const month = date.toLocaleString("en-US", { month: "short", timeZone: "UTC" });
     if (month !== previousMonth) {
-      monthLabels.push(`<text x="${x}" y="38" fill="#8b949e" font-size="12">${month}</text>`);
+      monthLabels.push(`<text x="${x}" y="72" fill="#8b949e" font-family="${FONT_FAMILY}" font-size="11">${month}</text>`);
       previousMonth = month;
     }
 
@@ -109,12 +110,19 @@ export function buildContributionSvg({ start, end, github = {}, gitlab = {} }) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title description">
   <title id="title">GitHub and GitLab daily activity</title>
   <desc id="description">An aggregate contribution chart with no project-level information.</desc>
-  <rect width="100%" height="100%" rx="10" fill="#0d1117"/>
-  <text x="28" y="24" fill="#f0f6fc" font-size="16" font-weight="600">Activity across GitHub &amp; GitLab</text>
+  <rect x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="12" fill="#0d1117" stroke="#30363d"/>
+  <text x="28" y="32" fill="#f0f6fc" font-family="${FONT_FAMILY}" font-size="16" font-weight="600">GitHub + GitLab activity</text>
+  <text x="28" y="51" fill="#8b949e" font-family="${FONT_FAMILY}" font-size="12">Daily contributions · last 12 months</text>
+  <text x="${width - 28}" y="32" fill="#8b949e" font-family="${FONT_FAMILY}" font-size="12" text-anchor="end">Aggregate only</text>
+  <path d="M28 62H${width - 28}" stroke="#21262d"/>
   ${monthLabels.join("\n  ")}
+  <text x="28" y="${top + 9}" fill="#6e7681" font-family="${FONT_FAMILY}" font-size="10">Sun</text>
+  <text x="28" y="${top + 2 * (square + gap) + 9}" fill="#6e7681" font-family="${FONT_FAMILY}" font-size="10">Tue</text>
+  <text x="28" y="${top + 4 * (square + gap) + 9}" fill="#6e7681" font-family="${FONT_FAMILY}" font-size="10">Thu</text>
+  <text x="28" y="${top + 6 * (square + gap) + 9}" fill="#6e7681" font-family="${FONT_FAMILY}" font-size="10">Sat</text>
   ${cells.join("\n  ")}
-  <rect x="28" y="178" width="12" height="12" rx="2" fill="#26a641"/><text x="46" y="188" fill="#8b949e" font-size="12">GitHub</text>
-  <rect x="118" y="178" width="12" height="12" rx="2" fill="#d14a08"/><text x="136" y="188" fill="#8b949e" font-size="12">GitLab</text>
-  <rect x="200" y="178" width="12" height="12" rx="2" fill="#d29922"/><text x="218" y="188" fill="#8b949e" font-size="12">Both</text>
+  <circle cx="34" cy="222" r="5" fill="#26a641"/><text x="46" y="226" fill="#8b949e" font-family="${FONT_FAMILY}" font-size="12">GitHub</text>
+  <circle cx="126" cy="222" r="5" fill="#fc6d26"/><text x="138" y="226" fill="#8b949e" font-family="${FONT_FAMILY}" font-size="12">GitLab</text>
+  <circle cx="210" cy="222" r="5" fill="#d29922"/><text x="222" y="226" fill="#8b949e" font-family="${FONT_FAMILY}" font-size="12">Both</text>
 </svg>\n`;
 }
