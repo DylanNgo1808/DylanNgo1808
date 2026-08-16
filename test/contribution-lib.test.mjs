@@ -2,9 +2,11 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { buildContributionSvg, gitlabEventWeight, startOfSunday } from "../scripts/contribution-lib.mjs";
 
-test("counts pushed commits and excludes unrelated GitLab events", () => {
-  assert.equal(gitlabEventWeight({ action_name: "pushed", push_data: { commit_count: 3 } }), 3);
-  assert.equal(gitlabEventWeight({ action_name: "pushed", push_data: { commit_count: 0 } }), 1);
+test("counts GitLab push and merge activity using GitLab's real action names", () => {
+  assert.equal(gitlabEventWeight({ action_name: "pushed new", push_data: { commit_count: 3 } }), 3);
+  assert.equal(gitlabEventWeight({ action_name: "pushed to", push_data: { commit_count: 0 } }), 1);
+  assert.equal(gitlabEventWeight({ action_name: "accepted" }), 1);
+  assert.equal(gitlabEventWeight({ action_name: "commented on" }), 1);
   assert.equal(gitlabEventWeight({ action_name: "deleted", target_type: "Project" }), 0);
 });
 
@@ -21,5 +23,6 @@ test("renders only aggregate daily totals", () => {
   });
   assert.match(svg, /GitHub &amp; GitLab/);
   assert.match(svg, /2026-08-10: 2 activities/);
+  assert.match(svg, /GitHub 2, GitLab 0/);
   assert.doesNotMatch(svg, /project_id|repository|commit_title/i);
 });
