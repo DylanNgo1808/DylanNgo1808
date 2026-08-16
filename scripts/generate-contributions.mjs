@@ -11,11 +11,13 @@ import {
 
 const githubUsername = process.env.GITHUB_USERNAME;
 const gitlabUsername = process.env.GITLAB_USERNAME;
-const githubToken = process.env.GITHUB_TOKEN;
+// GH_PROFILE_TOKEN is a read-only personal token used only to include private
+// GitHub contribution totals. The workflow token remains the safe fallback.
+const githubToken = process.env.GH_PROFILE_TOKEN || process.env.GITHUB_TOKEN;
 const gitlabToken = process.env.GITLAB_TOKEN;
 
 if (!githubUsername || !gitlabUsername || !githubToken || !gitlabToken) {
-  throw new Error("GITHUB_USERNAME, GITLAB_USERNAME, GITHUB_TOKEN, and GITLAB_TOKEN are required.");
+  throw new Error("GITHUB_USERNAME, GITLAB_USERNAME, GITHUB_TOKEN or GH_PROFILE_TOKEN, and GITLAB_TOKEN are required.");
 }
 
 const today = dateKey(new Date());
