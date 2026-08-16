@@ -21,6 +21,7 @@ jobs:
 
       - name: Generate aggregate-only chart
         env:
+          GH_PROFILE_TOKEN: ${{ secrets.GH_PROFILE_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
           GITHUB_USERNAME: DylanNgo1808
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
