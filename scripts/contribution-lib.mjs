@@ -4,15 +4,19 @@ const GITHUB_COLORS = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"];
 const GITLAB_COLORS = ["#161b22", "#4b1f11", "#8c2d04", "#d14a08", "#fc6d26"];
 const BOTH_COLORS = ["#161b22", "#5f4709", "#9b760f", "#d29922", "#f6c945"];
 
-const COUNTED_ACTIONS = new Set([
+const GITLAB_SINGLE_ACTIVITY_ACTIONS = new Set([
   "opened",
   "reopened",
   "closed",
+  "accepted",
   "merged",
   "approved",
   "commented",
+  "commented on",
   "created",
 ]);
+
+const GITLAB_PUSH_ACTIONS = new Set(["pushed", "pushed new", "pushed to"]);
 
 export function dateKey(value) {
   return new Date(value).toISOString().slice(0, 10);
@@ -33,13 +37,15 @@ export function contributionLevel(count) {
 }
 
 export function gitlabEventWeight(event) {
-  if (event.action_name === "pushed") {
+  const action = String(event.action_name ?? "").trim().toLowerCase();
+
+  if (GITLAB_PUSH_ACTIONS.has(action)) {
     const commits = Number(event.push_data?.commit_count);
     // GitLab reports 0 for a bulk push. It remains one visible activity event.
     return Number.isFinite(commits) && commits > 0 ? commits : 1;
   }
 
-  return COUNTED_ACTIONS.has(event.action_name) ? 1 : 0;
+  return GITLAB_SINGLE_ACTIVITY_ACTIONS.has(action) ? 1 : 0;
 }
 
 export function addToDailyTotals(target, day, amount) {
@@ -109,6 +115,6 @@ export function buildContributionSvg({ start, end, github = {}, gitlab = {} }) {
   ${cells.join("\n  ")}
   <rect x="28" y="178" width="12" height="12" rx="2" fill="#26a641"/><text x="46" y="188" fill="#8b949e" font-size="12">GitHub</text>
   <rect x="118" y="178" width="12" height="12" rx="2" fill="#d14a08"/><text x="136" y="188" fill="#8b949e" font-size="12">GitLab</text>
-  <rect x="200" y="178" width="12" height="12" rx="2" fill="#d29922"/><text x="218" y="188" fill="#8b949e" font-size="12">Both</text>
+  <rect x="200" y="178" width="12" height="12" rx="2" fill="#d29922"/><text x="218" y="188" fill="#8b949e">Both</text>
 </svg>\n`;
 }
