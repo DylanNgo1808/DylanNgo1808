@@ -21,7 +21,9 @@ test("renders only aggregate daily totals", () => {
     github: { "2026-08-10": 2 },
     gitlab: { "2026-08-11": 1 },
   });
-  assert.match(svg, /GitHub &amp; GitLab/);
+  assert.match(svg, /GitHub \+ GitLab activity/);
+  assert.match(svg, /font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"/);
+  assert.match(svg, /Daily contributions · last 12 months/);
   assert.match(svg, /2026-08-10: 2 activities/);
   assert.match(svg, /GitHub 2, GitLab 0/);
   assert.doesNotMatch(svg, /project_id|repository|commit_title/i);
