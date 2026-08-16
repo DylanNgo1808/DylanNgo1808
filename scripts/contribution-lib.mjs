@@ -115,6 +115,6 @@ export function buildContributionSvg({ start, end, github = {}, gitlab = {} }) {
   ${cells.join("\n  ")}
   <rect x="28" y="178" width="12" height="12" rx="2" fill="#26a641"/><text x="46" y="188" fill="#8b949e" font-size="12">GitHub</text>
   <rect x="118" y="178" width="12" height="12" rx="2" fill="#d14a08"/><text x="136" y="188" fill="#8b949e" font-size="12">GitLab</text>
-  <rect x="200" y="178" width="12" height="12" rx="2" fill="#d29922"/><text x="218" y="188" fill="#8b949e">Both</text>
+  <rect x="200" y="178" width="12" height="12" rx="2" fill="#d29922"/><text x="218" y="188" fill="#8b949e" font-size="12">Both</text>
 </svg>\n`;
 }
