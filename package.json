@@ -1,0 +1,9 @@
+{
+  "name": "github-gitlab-profile-widget",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-contributions.mjs",
+    "test": "node --test"
+  }
+}

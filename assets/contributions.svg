@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="160" viewBox="0 0 840 160" role="img" aria-labelledby="title description">
+  <title id="title">GitHub and GitLab daily activity</title>
+  <desc id="description">The chart will appear after the secure daily update is configured.</desc>
+  <rect width="100%" height="100%" rx="10" fill="#0d1117"/>
+  <text x="28" y="48" fill="#f0f6fc" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="20" font-weight="600">Activity across GitHub &amp; GitLab</text>
+  <text x="28" y="84" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="14">The aggregate-only chart will update daily once the GitLab read-only token is added.</text>
+  <text x="28" y="116" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12">No project names, repository links, commit messages, or code are displayed.</text>
+</svg>

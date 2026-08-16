@@ -1,0 +1,38 @@
+name: Update contribution chart
+
+on:
+  schedule:
+    - cron: "27 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-chart:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate aggregate-only chart
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_USERNAME: DylanNgo1808
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+          GITLAB_USERNAME: DylanNgo1808
+        run: node scripts/generate-contributions.mjs
+
+      - name: Commit refreshed chart
+        run: |
+          if git diff --quiet -- assets/contributions.svg; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/contributions.svg
+          git commit -m "chore: refresh contribution chart"
+          git push
