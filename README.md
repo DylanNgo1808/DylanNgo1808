@@ -4,6 +4,6 @@ Building at the intersection of AI, design, and product.
 
 Currently working on Gavana — a creative workspace that helps turn ideas into finished work. I care about making complex systems feel simple, useful, and beautifully crafted.
 
-![Daily GitHub and GitLab activity](https://github.com/DylanNgo1808/DylanNgo1808/raw/e61ef4ae7abd35b2e4ccb0809f13b2c007860a99/assets/contributions.svg)
+![Daily GitHub and GitLab activity](https://github.com/DylanNgo1808/DylanNgo1808/raw/274441c87815583f1ec422e28343114ec8560367/assets/contributions.svg)
 
 <sub>Combined daily totals from GitHub and GitLab. Project names, repository links, commit messages, and code stay private.</sub>
