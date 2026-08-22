@@ -391,7 +391,8 @@
   <rect x="942" y="114" width="12" height="12" rx="2" fill="#006d32"><title>2026-08-18: 3 activities (GitHub 3, GitLab 0)</title></rect>
   <rect x="942" y="131" width="12" height="12" rx="2" fill="#f6c945"><title>2026-08-19: 44 activities (GitHub 9, GitLab 35)</title></rect>
   <rect x="942" y="148" width="12" height="12" rx="2" fill="#f6c945"><title>2026-08-20: 41 activities (GitHub 8, GitLab 33)</title></rect>
-  <rect x="942" y="165" width="12" height="12" rx="2" fill="#161b22"><title>2026-08-21: 0 activities (GitHub 0, GitLab 0)</title></rect>
+  <rect x="942" y="165" width="12" height="12" rx="2" fill="#fc6d26"><title>2026-08-21: 25 activities (GitHub 0, GitLab 25)</title></rect>
+  <rect x="942" y="182" width="12" height="12" rx="2" fill="#161b22"><title>2026-08-22: 0 activities (GitHub 0, GitLab 0)</title></rect>
   <circle cx="34" cy="214" r="5" fill="#26a641"/><text x="46" y="218" fill="#8b949e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">GitHub</text>
   <circle cx="126" cy="214" r="5" fill="#fc6d26"/><text x="138" y="218" fill="#8b949e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">GitLab</text>
   <circle cx="210" cy="214" r="5" fill="#d29922"/><text x="222" y="218" fill="#8b949e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">Both</text>
