@@ -391,6 +391,7 @@
   <rect x="942" y="114" width="12" height="12" rx="2" fill="#161b22"><title>2026-08-25: 0 activities (GitHub 0, GitLab 0)</title></rect>
   <rect x="942" y="131" width="12" height="12" rx="2" fill="#4b1f11"><title>2026-08-26: 1 activity (GitHub 0, GitLab 1)</title></rect>
   <rect x="942" y="148" width="12" height="12" rx="2" fill="#161b22"><title>2026-08-27: 0 activities (GitHub 0, GitLab 0)</title></rect>
+  <rect x="942" y="165" width="12" height="12" rx="2" fill="#0e4429"><title>2026-08-28: 1 activity (GitHub 1, GitLab 0)</title></rect>
   <circle cx="34" cy="214" r="5" fill="#26a641"/><text x="46" y="218" fill="#8b949e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">GitHub</text>
   <circle cx="126" cy="214" r="5" fill="#fc6d26"/><text x="138" y="218" fill="#8b949e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">GitLab</text>
   <circle cx="210" cy="214" r="5" fill="#d29922"/><text x="222" y="218" fill="#8b949e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">Both</text>
