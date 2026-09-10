@@ -340,8 +340,8 @@
   <rect x="823" y="80" width="12" height="12" rx="2" fill="#161b22"><title>2026-07-19: 0 activities (GitHub 0, GitLab 0)</title></rect>
   <rect x="823" y="97" width="12" height="12" rx="2" fill="#d29922"><title>2026-07-20: 6 activities (GitHub 3, GitLab 3)</title></rect>
   <rect x="823" y="114" width="12" height="12" rx="2" fill="#39d353"><title>2026-07-21: 13 activities (GitHub 13, GitLab 0)</title></rect>
-  <rect x="823" y="131" width="12" height="12" rx="2" fill="#f6c945"><title>2026-07-22: 18 activities (GitHub 17, GitLab 1)</title></rect>
-  <rect x="823" y="148" width="12" height="12" rx="2" fill="#39d353"><title>2026-07-23: 12 activities (GitHub 12, GitLab 0)</title></rect>
+  <rect x="823" y="131" width="12" height="12" rx="2" fill="#f6c945"><title>2026-07-22: 21 activities (GitHub 20, GitLab 1)</title></rect>
+  <rect x="823" y="148" width="12" height="12" rx="2" fill="#39d353"><title>2026-07-23: 14 activities (GitHub 14, GitLab 0)</title></rect>
   <rect x="823" y="165" width="12" height="12" rx="2" fill="#f6c945"><title>2026-07-24: 9 activities (GitHub 7, GitLab 2)</title></rect>
   <rect x="823" y="182" width="12" height="12" rx="2" fill="#26a641"><title>2026-07-25: 7 activities (GitHub 7, GitLab 0)</title></rect>
   <rect x="840" y="80" width="12" height="12" rx="2" fill="#26a641"><title>2026-07-26: 4 activities (GitHub 4, GitLab 0)</title></rect>
@@ -389,7 +389,8 @@
   <rect x="942" y="80" width="12" height="12" rx="2" fill="#161b22"><title>2026-09-06: 0 activities (GitHub 0, GitLab 0)</title></rect>
   <rect x="942" y="97" width="12" height="12" rx="2" fill="#161b22"><title>2026-09-07: 0 activities (GitHub 0, GitLab 0)</title></rect>
   <rect x="942" y="114" width="12" height="12" rx="2" fill="#161b22"><title>2026-09-08: 0 activities (GitHub 0, GitLab 0)</title></rect>
-  <rect x="942" y="131" width="12" height="12" rx="2" fill="#161b22"><title>2026-09-09: 0 activities (GitHub 0, GitLab 0)</title></rect>
+  <rect x="942" y="131" width="12" height="12" rx="2" fill="#006d32"><title>2026-09-09: 3 activities (GitHub 3, GitLab 0)</title></rect>
+  <rect x="942" y="148" width="12" height="12" rx="2" fill="#0e4429"><title>2026-09-10: 1 activity (GitHub 1, GitLab 0)</title></rect>
   <circle cx="34" cy="214" r="5" fill="#26a641"/><text x="46" y="218" fill="#8b949e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">GitHub</text>
   <circle cx="126" cy="214" r="5" fill="#fc6d26"/><text x="138" y="218" fill="#8b949e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">GitLab</text>
   <circle cx="210" cy="214" r="5" fill="#d29922"/><text x="222" y="218" fill="#8b949e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">Both</text>
